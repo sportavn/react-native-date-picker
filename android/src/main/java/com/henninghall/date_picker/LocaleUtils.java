@@ -18,7 +18,7 @@ public class LocaleUtils {
     public static String getPatternIncluding(String format, Locale locale) {
         for (String piece: getFullPatternPieces(locale)){
             if(piece.contains(format)) {
-                return piece;
+                return piece.replaceAll("'", "");
             }
         }
         return null;
